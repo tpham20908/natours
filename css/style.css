@@ -125,6 +125,28 @@ body {
   padding: 15px 40px;
   border-radius: 2rem;
   transition: all 0.1s;
+  position: relative;
+}
+
+.btn-move-up {
+  animation: moveUpFromBelow .8s .5s ease-in-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveUpFromBelow {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateY(-0.2rem);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .btn:hover {
@@ -140,4 +162,27 @@ body {
 .btn-white {
   color: var(--grey);
   background: var(--white);
+}
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .6s;
+}
+
+.btn-white::after {
+  background: var(--white);
+  transition: all .2s;
+}
+
+.btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
 }
