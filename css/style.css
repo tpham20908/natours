@@ -63,6 +63,8 @@ body {
 .heading-primary {
   color: var(--white);
   text-transform: uppercase;
+  /* remove a very little shake at the end of the animation */
+  backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -70,6 +72,8 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  animation: moveInFromLeft 1s ease-in-out;
+  /* animation: moveInFromLeft 1.5s 0.5s 3 ease-in-out; */
 }
 
 .heading-primary-sub {
@@ -77,4 +81,37 @@ body {
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 17.4px;
+  animation: moveInFromRight 1s ease-in-out;
+}
+
+@keyframes moveInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  80% {
+    transform: translateX(0.2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+
+  80% {
+    transform: translateX(-0.2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
