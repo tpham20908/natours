@@ -3,7 +3,15 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
+
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-gray: #777777;
+$color-white: #ffffff;
+
 
 /*
 :root {
@@ -14,47 +22,62 @@
   --white: #ffffff;
 }
 */
+
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   font-family: 'Lato', 'sans-serif';
   font-weight: 400;
   /* font-size: 1.6rem; */
   line-height: 1.7;
-  color: #777777;
+  color: $color-gray;
   padding: 2rem;
-  box-sizing: border-box; }
+
+  box-sizing: border-box;
+}
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-image:
+    linear-gradient(
+      to right bottom, 
+      rgba($color-primary-light, 0.8), 
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
+  position: relative;
+}
 
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
 .header__logo {
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 .header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+}
 
 .heading-primary {
-  color: #ffffff;
+  color: $color-white;
   text-transform: uppercase;
   /* remove a very little shake at the end of the animation */
   backface-visibility: hidden;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+}
 
 .heading-primary--main {
   display: block;
@@ -62,34 +85,48 @@ body {
   font-weight: 400;
   letter-spacing: 2.5rem;
   animation: moveInFromLeft 1s ease-in-out;
-  /* animation: moveInFromLeft 1.5s 0.5s 3 ease-in-out; */ }
+  /* animation: moveInFromLeft 1.5s 0.5s 3 ease-in-out; */
+}
 
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: 1.2rem;
-  animation: moveInFromRight 1s ease-in-out; }
+  animation: moveInFromRight 1s ease-in-out;
+}
 
 @keyframes moveInFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-2rem); }
+    transform: translateX(-2rem);
+  }
+
   80% {
-    transform: translateX(0.2rem); }
+    transform: translateX(0.2rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInFromRight {
   0% {
     opacity: 0;
-    transform: translateX(2rem); }
+    transform: translateX(2rem);
+  }
+
   80% {
-    transform: translateX(-0.2rem); }
+    transform: translateX(-0.2rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -98,33 +135,44 @@ body {
   padding: 1.5rem 4rem;
   border-radius: 2rem;
   transition: all 0.1s;
-  position: relative; }
+  position: relative;
+}
 
 .btn--animated {
   animation: moveUpFromBelow .8s .5s ease-in-out;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+}
 
 @keyframes moveUpFromBelow {
   0% {
     transform: translateY(2rem);
-    opacity: 0; }
+    opacity: 0;
+  }
+
   80% {
-    transform: translateY(-0.2rem); }
+    transform: translateY(-0.2rem);
+  }
+
   100% {
     transform: translateY(0);
-    opacity: 1; } }
+    opacity: 1;
+  }
+}
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: .2rem 1rem .5rem #00000033; }
+  box-shadow: .2rem 1rem .5rem #00000033;
+}
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 .4rem .2rem #00000033; }
+  box-shadow: 0 .4rem .2rem #00000033;
+}
 
 .btn--white {
-  color: #777777;
-  background: #ffffff; }
+  color: $color-gray;
+  background: $color-white;
+}
 
 .btn::after {
   content: '';
@@ -136,12 +184,15 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .6s; }
+  transition: all .6s;
+}
 
 .btn--white::after {
-  background: #ffffff;
-  transition: all .2s; }
+  background: $color-white;
+  transition: all .2s;
+}
 
 .btn:hover::after {
   transform: scale(1.5);
-  opacity: 0; }
+  opacity: 0;
+}

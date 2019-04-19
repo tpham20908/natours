@@ -4,13 +4,16 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "lite-server"
+    "scss": "node-sass sass/main.scss css/style.css",
+    "serve": "lite-server",
+    "dev": "parallelshell \"npm run scss && npm run scss -- -w\" \"npm run serve\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.4.0"
+    "lite-server": "^2.4.0",
+    "node-sass": "^4.11.0",
+    "parallelshell": "^3.0.2"
   }
 }
