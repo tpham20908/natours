@@ -11,7 +11,7 @@ $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 $color-gray: #777777;
 $color-white: #ffffff;
-
+$color-black: #000000;
 
 /*
 :root {
@@ -51,24 +51,24 @@ body {
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
-}
 
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  height: 3.5rem;
-}
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+  
+  &__logo {
+    height: 3.5rem;
+  }
+  
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 
 .heading-primary {
@@ -77,23 +77,23 @@ body {
   /* remove a very little shake at the end of the animation */
   backface-visibility: hidden;
   margin-bottom: 2rem;
-}
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 2.5rem;
-  animation: moveInFromLeft 1s ease-in-out;
-  /* animation: moveInFromLeft 1.5s 0.5s 3 ease-in-out; */
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 1.2rem;
-  animation: moveInFromRight 1s ease-in-out;
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 2.5rem;
+    animation: moveInFromLeft 1s ease-in-out;
+    /* animation: moveInFromLeft 1.5s 0.5s 3 ease-in-out; */
+  }
+  
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.2rem;
+    animation: moveInFromRight 1s ease-in-out;
+  }
 }
 
 @keyframes moveInFromLeft {
@@ -161,12 +161,12 @@ body {
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: .2rem 1rem .5rem #00000033;
+  box-shadow: .2rem 1rem .5rem rgba($color-black, .2);
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 .4rem .2rem #00000033;
+  box-shadow: 0 .4rem .2rem rgba($color-black, .2);
 }
 
 .btn--white {
